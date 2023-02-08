@@ -1,0 +1,18 @@
+version: 2
+
+models: 
+
+    - name: emp_model 
+
+sources: 
+
+  - name: sample 
+    database: raw 
+    schema: | 
+      {%- if target.name == "dev" -%} dev_schema 
+      {%- elif target.name == "prod" -%} prod_schema 
+      {%- elif target.name == "test" -%} test_schema 
+      {%- else -%} invalid_schema 
+      {%- endif -%} 
+    tables: 
+     - name: orders 
