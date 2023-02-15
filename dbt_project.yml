@@ -38,7 +38,3 @@ models:
            +materialized: table
         staging:
             +materialized: view
-  BCG:
-    +materialized: view
-    +secure: true
-    +query_tag: dbt_ran
